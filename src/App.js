@@ -4,7 +4,12 @@ import './App.css';
 export default function App() {
   return (
       <div className="App">
-        Weather app
+        <h1>eather App</h1>
+        <footer>
+        <p>
+          This project was coded by Diana Castaño, and is an <a href="https://github.com/Natsumychan/weather-react-app-shecodes" target="_blank">open source</a>
+        </p>
+        </footer>
       </div>
     );
   }
