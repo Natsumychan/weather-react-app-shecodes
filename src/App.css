@@ -4,6 +4,7 @@
 }
 
 .App footer p{
+ margin: 10px 0;
  font-size: 0.8rem;
  text-align: center;
 }

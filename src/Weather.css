@@ -1,5 +1,6 @@
 :root{
  --default-color: #878787;
+ --temp-color:rgb(33, 33, 33);
 }
 
 .weather{
@@ -21,6 +22,29 @@
  line-height: 29px;
  color:var(--default-color);
 }
+
+.weather img{
+ height:64px;
+ width:64px;
+}
+
+.weather .temperature{
+ margin-left:8px;
+ font-weight: 400;
+ color: var(--temp-color);
+ font-size: 3.5rem;
+ line-height: 64px;
+ vertical-align: bottom;
+}
+
+.weather .unit{
+ margin-left: 4px;
+ color:var(--temp-color);
+ font-size: 1.2rem;
+ font-weight: 400;
+ line-height: 1;
+ vertical-align: top;
+} 
 
 .weather ul{
  margin:0;
