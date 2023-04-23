@@ -1,8 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
+import axios from 'axios';
+import {apiKey} from "./config";
 import "./Weather.css"
 
 export default function Weather (){
- return (
+ const [ready, setReady] = useState(false)
+ const [temperature, setTemperature] = useState(null);
+ 
+ function handleResponse(response){
+  console.log(response.data)
+  setTemperature(response.data.temperature.current)
+  setReady(true)
+ }
+
+ if(ready){
+  return (
   <div className="weather">
    <form>
     <div className="row">
@@ -21,8 +33,8 @@ export default function Weather (){
    </ul>
    <div className="row">
     <div className="col-6">
-      <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="clear" className="float-left"/>
-      <span className="temperature">6</span>
+      <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="clear"/>
+      <span className="temperature">{temperature}</span>
       <span className="unit">°C</span>
     </div>
     <div className="col-6">
@@ -35,4 +47,12 @@ export default function Weather (){
    </div>
   </div>
  )
+ }else{
+  let city="New York"
+  let apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`
+  axios.get(apiUrl).then(handleResponse)
+  return "Loading..."
+ }
+ 
+ 
 }
