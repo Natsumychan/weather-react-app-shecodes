@@ -46,6 +46,13 @@
  vertical-align: top;
 } 
 
+.weather .separator{
+ margin-left: 5px;
+ font-size: 1.2rem;
+ line-height: 1;
+ vertical-align: top;
+}
+
 .weather ul{
  margin:0;
  padding:0;
