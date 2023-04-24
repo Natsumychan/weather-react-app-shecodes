@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import ReactAnimatedWeather from 'react-animated-weather';
 import axios from 'axios';
 import {apiKey} from "./config";
 import WeatherInfo from "./WeatherInfo";
@@ -7,6 +8,12 @@ import "./Weather.css";
 export default function Weather (props){
  const [city, setCity]=useState(props.defaultCity)
  const [weatherData, setWeatherData] = useState({ready:false});
+ const defaults = {
+  icon: 'WIND',
+  color: 'goldenrod',
+  size: 250,
+  animate: true
+  };
  
  function handleResponse(response){
   console.log(response.data)
@@ -55,7 +62,16 @@ export default function Weather (props){
  )
  }else{
   search();
-  return "Loading..."
+  return (
+    <div className="loading-screen">
+    <p>Loading...</p>
+    <ReactAnimatedWeather
+    icon={defaults.icon}
+    color={defaults.color}
+    size={defaults.size}
+    animate={defaults.animate}
+    />
+  </div>)
  }
  
  
