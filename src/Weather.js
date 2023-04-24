@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import ReactAnimatedWeather from 'react-animated-weather';
 import axios from 'axios';
-import {apiKey} from "./config";
 import WeatherInfo from "./WeatherInfo";
 import "./Weather.css";
 
@@ -31,7 +30,7 @@ export default function Weather (props){
  }
 
  function search(){
-  let apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`
+  let apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=te60b41a5ebo3808074c9edaf83940fc&units=metric`
   axios.get(apiUrl).then(handleResponse)
  }
 
