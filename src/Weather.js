@@ -24,8 +24,7 @@ export default function Weather (props){
     iconDescription:response.data.condition.icon,
     humidity:response.data.temperature.humidity,
     wind:response.data.wind.speed,
-    city: city,
-    unit:"metric"
+    city: city
   });
  }
 
