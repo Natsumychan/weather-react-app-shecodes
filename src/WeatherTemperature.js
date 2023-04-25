@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import WeatherForecast from "./WeatherForecast";
 
 export default function WeatherTemperature(props){
+  let city=props.city
   let [measure, setMeasure]= useState("metric")
  const[unit, setUnit]= useState("celsius")
  function convertToFarenheit(event){
