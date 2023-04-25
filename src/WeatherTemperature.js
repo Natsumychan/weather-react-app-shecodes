@@ -27,14 +27,14 @@ export default function WeatherTemperature(props){
     <span className="temperature">{props.celsius}</span>
     <span className="unit">°C</span>
     <span className="separator">|</span>
-    <a href="/"className="unit" onClick={convertToFarenheit}>°F</a>
+    <a href="/"className="unit-to-select" onClick={convertToFarenheit}>°F</a>
     <WeatherForecast city={city} unit={measure}/>
    </>) 
  }else{
   return (
    <>
     <span className="temperature">{farenheit()}</span>
-    <a href="/"className="unit" onClick={convertToCelsius}>°C</a>
+    <a href="/"className="unit-to-select" onClick={convertToCelsius}>°C</a>
     <span className="separator">|</span>
     <span className="unit">°F</span>
     <WeatherForecast city={city} unit={measure}/>
