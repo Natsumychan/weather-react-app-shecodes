@@ -22,7 +22,6 @@ export default function WeatherTemperature(props){
  }
 
  if(unit ==="celsius"){
-  console.log(measure)
    return(
    <>
     <span className="temperature">{props.celsius}</span>
@@ -30,10 +29,8 @@ export default function WeatherTemperature(props){
     <span className="separator">|</span>
     <a href="/"className="unit" onClick={convertToFarenheit}>°F</a>
     <WeatherForecast city={city} unit={measure}/>
-   </>)
-   
+   </>) 
  }else{
-  console.log(measure)
   return (
    <>
     <span className="temperature">{farenheit()}</span>
